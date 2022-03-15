@@ -31,4 +31,4 @@ class UserSerializer(serializers.Serializer):
 class PlanSerializer(serializers.ModelSerializer):
     class Meta:
         model = plans
-        fields = '__All__'
+        fields = '__all__'
