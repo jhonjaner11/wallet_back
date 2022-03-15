@@ -16,9 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from plans.api import UserAPI, planList
+from rewards.api import rewardList, transactionList
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/create_user/', UserAPI.as_view(), name = "api_create_user"),
-    path('api/plans/', planList.as_view(), name = "api_get_plans")
+    path('api/plans/', planList.as_view(), name = "api_get_plans"),
+    path('api/subscriptions/', planList.as_view(), name = "api_get_subscriptions"),
+    path('api/rewards/', rewardList.as_view(), name = "api_get_rewards"),
+    path('api/transactions/', transactionList.as_view(), name = "api_get_transactions")
 ]
