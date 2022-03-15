@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from plans.api import UserAPI
+from plans.api import UserAPI, planList
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/create_user/', UserAPI.as_view(), name = "api_create_user")
+    path('api/create_user/', UserAPI.as_view(), name = "api_create_user"),
+    path('api/plans/', planList.as_view(), name = "api_get_plans")
 ]

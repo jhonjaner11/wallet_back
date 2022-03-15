@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
+from .models import plans
 
 class UserSerializer(serializers.Serializer):
     id = serializers.ReadOnlyField()
@@ -26,3 +27,8 @@ class UserSerializer(serializers.Serializer):
             raise serializers.ValidationError("Este nombre de usuario ya existe")
         else:
             return data
+
+class PlanSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = plans
+        fields = '__All__'
